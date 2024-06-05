@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/DemoApplication.java
 package com.example.demo;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;

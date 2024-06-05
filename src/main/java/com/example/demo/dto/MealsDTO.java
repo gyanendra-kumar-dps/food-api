@@ -1,7 +1,5 @@
-// src/main/java/com/example/demo/dto/MealsDTO.java
 package com.example.demo.dto;
 
-import com.example.demo.entity.Order;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

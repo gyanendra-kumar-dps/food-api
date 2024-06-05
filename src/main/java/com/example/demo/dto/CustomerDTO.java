@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/dto/CustomerDTO.java
 package com.example.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

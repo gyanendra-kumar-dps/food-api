@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/mapper/OrdersMapper.java
 package com.example.demo.mapper;
 
 import com.example.demo.dto.OrdersDTO;
