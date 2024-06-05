@@ -1,0 +1,148 @@
+# src/main/resources/openapi.yml
+openapi: 3.0.0
+info:
+  title: Orders API
+  version: 1.0.0
+paths:
+  /meals:
+    get:
+      summary: Get all meals
+      responses:
+        '200':
+          description: Successful response
+    post:
+      summary: Create a meal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MealsDTO'
+      responses:
+        '200':
+          description: Successful response
+  /meals/{id}:
+    get:
+      summary: Get meal by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Meal ID
+      responses:
+        '200':
+          description: Successful response
+    put:
+      summary: Update a meal
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Meal ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MealsDTO'
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      summary: Delete a meal
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Meal ID
+      responses:
+        '204':
+          description: No content
+  /orders:
+    get:
+      summary: Get all orders
+      responses:
+        '200':
+          description: Successful response
+    post:
+      summary: Create an order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrdersDTO'
+      responses:
+        '200':
+          description: Successful response
+  /orders/{id}:
+    get:
+      summary: Get order by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Order ID
+      responses:
+        '200':
+          description: Successful response
+    put:
+      summary: Update an order
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Order ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrdersDTO'
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      summary: Delete an order
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Order ID
+      responses:
+        '204':
+          description: No content
+components:
+  schemas:
+    MealsDTO:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+    OrdersDTO:
+      type: object
+      properties:
+        id:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/MealsDTO'
+        total:
+          type: number

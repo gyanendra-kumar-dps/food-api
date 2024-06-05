@@ -1,0 +1,24 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  sql:
+    init:
+      mode: always
+  flyway:
+    baselineOnMigrate: false
+    clean-disabled: false
+    enabled: false
+    locations: classpath:db.migration
+  datasource:
+    hikari:
+      max-lifetime: 6000
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        auto_quote_keyword: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema:
+        show_sql: true
+        ddl-auto: create
